@@ -104,9 +104,9 @@ Any kernel performing:
 **must transfer data from AccVGPRs to ArchVGPRs**.
 
 This transfer:
-- Has non-zero latency
-- Competes with MFMA scheduling
-- Cannot be optimized away by the compiler
+- Has fixed architectural latency
+- Competes directly with MFMA issue slots
+- Cannot be elided, hoisted, or hidden by the compiler
 
 ---
 
@@ -160,6 +160,8 @@ Designs relying on frequent cross-lane reductions:
 - Pay higher fixed overhead on AMD
 - Become latency-sensitive under register pressure
 
+Occupancy loss on wavefront-64 GPUs occurs as a **step function**, not a gradual slope.
+
 ---
 
 ## 7. Failure Modes (Non-Optional)
@@ -188,7 +190,22 @@ An attention kernel that respects wavefront-64 must:
 
 ---
 
-## 9. Contract Summary (Non-Negotiable)
+## 9. What This Contract Explicitly Forbids
+
+An attention kernel targeting wavefront-64 GPUs must **not**:
+
+- Assume a unified register file
+- Treat accumulators as free or spillable state
+- Assume warp-32 reduction behavior
+- Rely on compiler heuristics to manage register pressure
+- Ignore AccVGPR ↔ ArchVGPR transfer latency
+
+Violating these assumptions does not result in “suboptimal” performance —
+it results in **predictable architectural failure**.
+
+---
+
+## 10. Contract Summary (Non-Negotiable)
 
 | Constraint | Required |
 |----------|---------|
@@ -200,7 +217,7 @@ An attention kernel that respects wavefront-64 must:
 
 ---
 
-## 10. Closing Statement
+## 11. Closing Statement
 
 FlashAttention’s design is **algorithmically sound**, but its performance is contingent on architectural assumptions.
 
