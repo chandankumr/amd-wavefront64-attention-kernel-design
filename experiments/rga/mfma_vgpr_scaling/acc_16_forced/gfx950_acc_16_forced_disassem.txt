@@ -1,0 +1,542 @@
+AMD Kernel Code for "acc_16_forced"
+
+Disassembly for "acc_16_forced":
+
+@kernel acc_16_forced:
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:4
+; {
+	s_mov_b32 s4, 0x3c003c00                                   // 000000001600: BE8400FF 3C003C00
+	s_mov_b32 s5, s4                                           // 000000001608: BE850004
+	s_mov_b32 s2, 32                                           // 00000000160C: BE8200A0
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_accvgpr_write_b32 a63, 0                                 // 000000001610: D3D9403F 18000080
+	v_accvgpr_write_b32 a62, 0                                 // 000000001618: D3D9403E 18000080
+	v_accvgpr_write_b32 a61, 0                                 // 000000001620: D3D9403D 18000080
+	v_accvgpr_write_b32 a60, 0                                 // 000000001628: D3D9403C 18000080
+	v_accvgpr_write_b32 a59, 0                                 // 000000001630: D3D9403B 18000080
+	v_accvgpr_write_b32 a58, 0                                 // 000000001638: D3D9403A 18000080
+	v_accvgpr_write_b32 a57, 0                                 // 000000001640: D3D94039 18000080
+	v_accvgpr_write_b32 a56, 0                                 // 000000001648: D3D94038 18000080
+	v_accvgpr_write_b32 a39, 0                                 // 000000001650: D3D94027 18000080
+	v_accvgpr_write_b32 a38, 0                                 // 000000001658: D3D94026 18000080
+	v_accvgpr_write_b32 a37, 0                                 // 000000001660: D3D94025 18000080
+	v_accvgpr_write_b32 a36, 0                                 // 000000001668: D3D94024 18000080
+	v_accvgpr_write_b32 a43, 0                                 // 000000001670: D3D9402B 18000080
+	v_accvgpr_write_b32 a42, 0                                 // 000000001678: D3D9402A 18000080
+	v_accvgpr_write_b32 a41, 0                                 // 000000001680: D3D94029 18000080
+	v_accvgpr_write_b32 a40, 0                                 // 000000001688: D3D94028 18000080
+	v_accvgpr_write_b32 a55, 0                                 // 000000001690: D3D94037 18000080
+	v_accvgpr_write_b32 a54, 0                                 // 000000001698: D3D94036 18000080
+	v_accvgpr_write_b32 a53, 0                                 // 0000000016A0: D3D94035 18000080
+	v_accvgpr_write_b32 a52, 0                                 // 0000000016A8: D3D94034 18000080
+	v_accvgpr_write_b32 a47, 0                                 // 0000000016B0: D3D9402F 18000080
+	v_accvgpr_write_b32 a46, 0                                 // 0000000016B8: D3D9402E 18000080
+	v_accvgpr_write_b32 a45, 0                                 // 0000000016C0: D3D9402D 18000080
+	v_accvgpr_write_b32 a44, 0                                 // 0000000016C8: D3D9402C 18000080
+	v_accvgpr_write_b32 a51, 0                                 // 0000000016D0: D3D94033 18000080
+	v_accvgpr_write_b32 a50, 0                                 // 0000000016D8: D3D94032 18000080
+	v_accvgpr_write_b32 a49, 0                                 // 0000000016E0: D3D94031 18000080
+	v_accvgpr_write_b32 a48, 0                                 // 0000000016E8: D3D94030 18000080
+	v_accvgpr_write_b32 a31, 0                                 // 0000000016F0: D3D9401F 18000080
+	v_accvgpr_write_b32 a30, 0                                 // 0000000016F8: D3D9401E 18000080
+	v_accvgpr_write_b32 a29, 0                                 // 000000001700: D3D9401D 18000080
+	v_accvgpr_write_b32 a28, 0                                 // 000000001708: D3D9401C 18000080
+	v_accvgpr_write_b32 a23, 0                                 // 000000001710: D3D94017 18000080
+	v_accvgpr_write_b32 a22, 0                                 // 000000001718: D3D94016 18000080
+	v_accvgpr_write_b32 a21, 0                                 // 000000001720: D3D94015 18000080
+	v_accvgpr_write_b32 a20, 0                                 // 000000001728: D3D94014 18000080
+	v_accvgpr_write_b32 a19, 0                                 // 000000001730: D3D94013 18000080
+	v_accvgpr_write_b32 a18, 0                                 // 000000001738: D3D94012 18000080
+	v_accvgpr_write_b32 a17, 0                                 // 000000001740: D3D94011 18000080
+	v_accvgpr_write_b32 a16, 0                                 // 000000001748: D3D94010 18000080
+	v_accvgpr_write_b32 a27, 0                                 // 000000001750: D3D9401B 18000080
+	v_accvgpr_write_b32 a26, 0                                 // 000000001758: D3D9401A 18000080
+	v_accvgpr_write_b32 a25, 0                                 // 000000001760: D3D94019 18000080
+	v_accvgpr_write_b32 a24, 0                                 // 000000001768: D3D94018 18000080
+	v_accvgpr_write_b32 a15, 0                                 // 000000001770: D3D9400F 18000080
+	v_accvgpr_write_b32 a14, 0                                 // 000000001778: D3D9400E 18000080
+	v_accvgpr_write_b32 a13, 0                                 // 000000001780: D3D9400D 18000080
+	v_accvgpr_write_b32 a12, 0                                 // 000000001788: D3D9400C 18000080
+	v_accvgpr_write_b32 a7, 0                                  // 000000001790: D3D94007 18000080
+	v_accvgpr_write_b32 a6, 0                                  // 000000001798: D3D94006 18000080
+	v_accvgpr_write_b32 a5, 0                                  // 0000000017A0: D3D94005 18000080
+	v_accvgpr_write_b32 a4, 0                                  // 0000000017A8: D3D94004 18000080
+	v_accvgpr_write_b32 a11, 0                                 // 0000000017B0: D3D9400B 18000080
+	v_accvgpr_write_b32 a10, 0                                 // 0000000017B8: D3D9400A 18000080
+	v_accvgpr_write_b32 a9, 0                                  // 0000000017C0: D3D94009 18000080
+	v_accvgpr_write_b32 a8, 0                                  // 0000000017C8: D3D94008 18000080
+	v_accvgpr_write_b32 a3, 0                                  // 0000000017D0: D3D94003 18000080
+	v_accvgpr_write_b32 a2, 0                                  // 0000000017D8: D3D94002 18000080
+	v_accvgpr_write_b32 a1, 0                                  // 0000000017E0: D3D94001 18000080
+	v_accvgpr_write_b32 a0, 0                                  // 0000000017E8: D3D94000 18000080
+	v_accvgpr_write_b32 a35, 0                                 // 0000000017F0: D3D94023 18000080
+	v_accvgpr_write_b32 a34, 0                                 // 0000000017F8: D3D94022 18000080
+	v_accvgpr_write_b32 a33, 0                                 // 000000001800: D3D94021 18000080
+	v_accvgpr_write_b32 a32, 0                                 // 000000001808: D3D94020 18000080
+	v_mov_b64_e32 v[2:3], s[4:5]                               // 000000001810: 7E047004
+	s_mov_b32 s33, 0                                           // 000000001814: BEA10080
+
+L0:
+	s_nop 0                                                    // 000000001818: BF800000
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 00000000181C: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:30
+;     for (int i = 0;  32; ++i)
+	s_add_i32 s2, s2, -8                                       // 000000001824: 8102C802
+	s_cmp_eq_u32 s2, 0                                         // 000000001828: BF068002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 00000000182C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001834: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 00000000183C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001844: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 00000000184C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001854: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 00000000185C: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001864: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 00000000186C: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001874: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 00000000187C: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001884: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 00000000188C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001894: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 00000000189C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 0000000018A4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 0000000018AC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 0000000018B4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 0000000018BC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 0000000018C4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 0000000018CC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 0000000018D4: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 0000000018DC: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 0000000018E4: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 0000000018EC: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 0000000018F4: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 0000000018FC: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001904: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 00000000190C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001914: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 00000000191C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001924: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 00000000192C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001934: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 00000000193C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001944: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 00000000194C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001954: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 00000000195C: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001964: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 00000000196C: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001974: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 00000000197C: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001984: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 00000000198C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001994: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 00000000199C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 0000000019A4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 0000000019AC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 0000000019B4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 0000000019BC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 0000000019C4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 0000000019CC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 0000000019D4: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 0000000019DC: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 0000000019E4: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 0000000019EC: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 0000000019F4: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 0000000019FC: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001A04: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001A0C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001A14: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001A1C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001A24: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001A2C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001A34: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001A3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001A44: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001A4C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001A54: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001A5C: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001A64: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001A6C: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001A74: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001A7C: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001A84: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001A8C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001A94: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001A9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001AA4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001AAC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001AB4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001ABC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001AC4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001ACC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001AD4: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001ADC: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001AE4: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001AEC: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001AF4: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001AFC: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001B04: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001B0C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001B14: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001B1C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001B24: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001B2C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001B34: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001B3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001B44: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001B4C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001B54: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001B5C: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001B64: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001B6C: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001B74: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001B7C: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001B84: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001B8C: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001B94: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001B9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:32
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc0 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001BA4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:35
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc3 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001BAC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:36
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc4 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001BB4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:38
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc6 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001BBC: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:39
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc7 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001BC4: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:41
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc9 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001BCC: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:42
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc10,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001BD4: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:44
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc12,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001BDC: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:45
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc13,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001BE4: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:47
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc15,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001BEC: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:46
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc14,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001BF4: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:43
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc11,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001BFC: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:40
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc8 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001C04: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:37
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc5 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001C0C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:34
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc2 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001C14: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:33
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a,b,acc1 ,0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001C1C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:30
+;     for (int i = 0;  32; ++i)
+	s_cbranch_scc0 L0                                          // 000000001C24: BF84FEFC
+	v_accvgpr_read_b32 v9, a32                                 // 000000001C28: D3D84009 18000120
+	s_nop 5                                                    // 000000001C30: BF800005
+	v_accvgpr_read_b32 v18, a60                                // 000000001C34: D3D84012 1800013C
+	v_accvgpr_read_b32 v17, a56                                // 000000001C3C: D3D84011 18000138
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:52
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v2, v18, v9                                  // 000000001C44: 02041312
+	v_accvgpr_read_b32 v16, a36                                // 000000001C48: D3D84010 18000124
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:52
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v2, v17, v2                                  // 000000001C50: 02040511
+	v_accvgpr_read_b32 v15, a40                                // 000000001C54: D3D8400F 18000128
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:52
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v2, v16, v2                                  // 000000001C5C: 02040510
+	v_accvgpr_read_b32 v14, a52                                // 000000001C60: D3D8400E 18000134
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:52
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v2, v15, v2                                  // 000000001C68: 0204050F
+	v_accvgpr_read_b32 v13, a44                                // 000000001C6C: D3D8400D 1800012C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:53
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v2, v14, v2                                  // 000000001C74: 0204050E
+	v_accvgpr_read_b32 v12, a48                                // 000000001C78: D3D8400C 18000130
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:53
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v2, v13, v2                                  // 000000001C80: 0204050D
+	v_accvgpr_read_b32 v11, a28                                // 000000001C84: D3D8400B 1800011C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:53
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v2, v12, v2                                  // 000000001C8C: 0204050C
+	v_accvgpr_read_b32 v10, a20                                // 000000001C90: D3D8400A 18000114
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:53
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v2, v11, v2                                  // 000000001C98: 0204050B
+	v_accvgpr_read_b32 v8, a16                                 // 000000001C9C: D3D84008 18000110
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:54
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v2, v10, v2                                  // 000000001CA4: 0204050A
+	v_accvgpr_read_b32 v7, a24                                 // 000000001CA8: D3D84007 18000118
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:54
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v2, v8, v2                                   // 000000001CB0: 02040508
+	v_accvgpr_read_b32 v6, a12                                 // 000000001CB4: D3D84006 1800010C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:30
+;     for (int i = 0;  32; ++i)
+	s_load_dwordx2 s[0:1], s[0:1], 0x0                         // 000000001CBC: C0060000 00000000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:54
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v2, v7, v2                                   // 000000001CC4: 02040507
+	v_accvgpr_read_b32 v5, a4                                  // 000000001CC8: D3D84005 18000104
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:54
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v2, v6, v2                                   // 000000001CD0: 02040506
+	v_accvgpr_read_b32 v4, a8                                  // 000000001CD4: D3D84004 18000108
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:55
+;         acc12.x + acc13.x + acc14.x + acc15.x;
+	v_add_f32_e32 v2, v5, v2                                   // 000000001CDC: 02040505
+	v_accvgpr_read_b32 v1, a0                                  // 000000001CE0: D3D84001 18000100
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:55
+;         acc12.x + acc13.x + acc14.x + acc15.x;
+	v_add_f32_e32 v2, v4, v2                                   // 000000001CE8: 02040504
+	v_add_f32_e32 v1, v1, v2                                   // 000000001CEC: 02020501
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:57
+;     out[tid] = sum;
+	v_lshlrev_b32_e32 v0, 2, v0                                // 000000001CF0: 24000082
+	s_waitcnt lgkmcnt(0)                                       // 000000001CF4: BF8CC07F
+	global_store_dword v0, v1, s[0:1]                          // 000000001CF8: DC708000 00000100
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-043001\Clone0\acc_16_forced.cl:58
+; }
+	s_endpgm                                                   // 000000001D00: BF810000
+
