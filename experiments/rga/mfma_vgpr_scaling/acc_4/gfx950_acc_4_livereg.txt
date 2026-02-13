@@ -1,0 +1,45 @@
+Legend:
+  ':' means that the register is kept alive, while it is not actively being used by the current instruction
+  '^' means that the current instruction writes to the register
+  'v' means that the current instruction reads from the register
+  'x' means that the current instruction both reads from the register and writes to it
+ 'Rn': Number of live registers
+
+  Line | Rn  |      | Instruction
+--------------------------------------------------------------------------------
+     1 |   1 | :    | s_mov_b32 s2, 0x3c003c00
+     2 |   1 | :    | s_mov_b32 s3, s2
+     3 |   3 | : ^^ | v_mov_b64 v[2:3], s[2:3]
+     4 |   3 | : :: | s_load_dwordx2 s[0:1], s[0:1], 0x0
+     5 |   3 | x :: | v_lshlrev_b32 v0, 2, v0
+     6 |   3 | : :: | s_mov_b32 s33, 0
+     7 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], 0
+     8 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+     9 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    10 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    11 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    12 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    13 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    14 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    15 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    16 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    17 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    18 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    19 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    20 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    21 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    22 |   3 | : vv | v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]
+    23 |   1 | :    | s_nop 7
+    24 |   2 | :^   | v_accvgpr_read_b32 v1, a0
+    25 |   3 | :v^  | v_add_f32 v2, v1, v1
+    26 |   3 | :vx  | v_add_f32 v2, v2, v1
+    27 |   3 | :xv  | v_add_f32 v1, v2, v1
+    28 |   2 | ::   | s_waitcnt lgkmcnt(0)
+    29 |   2 | vv   | global_store_dword v0, v1, s[0:1]
+    30 |   0 |      | s_endpgm
+
+Maximum # VGPR used   3, VGPRs allocated by HW:   8 (4 requested)
+
+Architecture info:
+  VGPRs total: 256
+  VGPR allocation granularity: 8
