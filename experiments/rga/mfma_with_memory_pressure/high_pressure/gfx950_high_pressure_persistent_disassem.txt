@@ -1,0 +1,573 @@
+AMD Kernel Code for "high_pressure_persistent"
+
+Disassembly for "high_pressure_persistent":
+
+@kernel high_pressure_persistent:
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:6
+;     int gid = get_global_id(0);
+	s_load_dword s3, s[0:1], 0x1c                              // 000000001900: C00200C0 0000001C
+	s_load_dwordx2 s[8:9], s[0:1], 0x38                        // 000000001908: C0060200 00000038
+	s_mov_b32 s6, 0x3c003c00                                   // 000000001910: BE8600FF 3C003C00
+	s_mov_b32 s7, s6                                           // 000000001918: BE870006
+	s_mov_b32 s4, 32                                           // 00000000191C: BE8400A0
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_accvgpr_write_b32 a63, 0                                 // 000000001920: D3D9403F 18000080
+	v_accvgpr_write_b32 a62, 0                                 // 000000001928: D3D9403E 18000080
+	v_accvgpr_write_b32 a61, 0                                 // 000000001930: D3D9403D 18000080
+	v_accvgpr_write_b32 a60, 0                                 // 000000001938: D3D9403C 18000080
+	v_accvgpr_write_b32 a59, 0                                 // 000000001940: D3D9403B 18000080
+	v_accvgpr_write_b32 a58, 0                                 // 000000001948: D3D9403A 18000080
+	v_accvgpr_write_b32 a57, 0                                 // 000000001950: D3D94039 18000080
+	v_accvgpr_write_b32 a56, 0                                 // 000000001958: D3D94038 18000080
+	v_accvgpr_write_b32 a47, 0                                 // 000000001960: D3D9402F 18000080
+	v_accvgpr_write_b32 a46, 0                                 // 000000001968: D3D9402E 18000080
+	v_accvgpr_write_b32 a45, 0                                 // 000000001970: D3D9402D 18000080
+	v_accvgpr_write_b32 a44, 0                                 // 000000001978: D3D9402C 18000080
+	v_accvgpr_write_b32 a51, 0                                 // 000000001980: D3D94033 18000080
+	v_accvgpr_write_b32 a50, 0                                 // 000000001988: D3D94032 18000080
+	v_accvgpr_write_b32 a49, 0                                 // 000000001990: D3D94031 18000080
+	v_accvgpr_write_b32 a48, 0                                 // 000000001998: D3D94030 18000080
+	v_accvgpr_write_b32 a55, 0                                 // 0000000019A0: D3D94037 18000080
+	v_accvgpr_write_b32 a54, 0                                 // 0000000019A8: D3D94036 18000080
+	v_accvgpr_write_b32 a53, 0                                 // 0000000019B0: D3D94035 18000080
+	v_accvgpr_write_b32 a52, 0                                 // 0000000019B8: D3D94034 18000080
+	v_accvgpr_write_b32 a19, 0                                 // 0000000019C0: D3D94013 18000080
+	v_accvgpr_write_b32 a18, 0                                 // 0000000019C8: D3D94012 18000080
+	v_accvgpr_write_b32 a17, 0                                 // 0000000019D0: D3D94011 18000080
+	v_accvgpr_write_b32 a16, 0                                 // 0000000019D8: D3D94010 18000080
+	v_accvgpr_write_b32 a15, 0                                 // 0000000019E0: D3D9400F 18000080
+	v_accvgpr_write_b32 a14, 0                                 // 0000000019E8: D3D9400E 18000080
+	v_accvgpr_write_b32 a13, 0                                 // 0000000019F0: D3D9400D 18000080
+	v_accvgpr_write_b32 a12, 0                                 // 0000000019F8: D3D9400C 18000080
+	v_accvgpr_write_b32 a23, 0                                 // 000000001A00: D3D94017 18000080
+	v_accvgpr_write_b32 a22, 0                                 // 000000001A08: D3D94016 18000080
+	v_accvgpr_write_b32 a21, 0                                 // 000000001A10: D3D94015 18000080
+	v_accvgpr_write_b32 a20, 0                                 // 000000001A18: D3D94014 18000080
+	v_accvgpr_write_b32 a3, 0                                  // 000000001A20: D3D94003 18000080
+	v_accvgpr_write_b32 a2, 0                                  // 000000001A28: D3D94002 18000080
+	v_accvgpr_write_b32 a1, 0                                  // 000000001A30: D3D94001 18000080
+	v_accvgpr_write_b32 a0, 0                                  // 000000001A38: D3D94000 18000080
+	v_accvgpr_write_b32 a7, 0                                  // 000000001A40: D3D94007 18000080
+	v_accvgpr_write_b32 a6, 0                                  // 000000001A48: D3D94006 18000080
+	v_accvgpr_write_b32 a5, 0                                  // 000000001A50: D3D94005 18000080
+	v_accvgpr_write_b32 a4, 0                                  // 000000001A58: D3D94004 18000080
+	v_accvgpr_write_b32 a11, 0                                 // 000000001A60: D3D9400B 18000080
+	v_accvgpr_write_b32 a10, 0                                 // 000000001A68: D3D9400A 18000080
+	v_accvgpr_write_b32 a9, 0                                  // 000000001A70: D3D94009 18000080
+	v_accvgpr_write_b32 a8, 0                                  // 000000001A78: D3D94008 18000080
+	v_accvgpr_write_b32 a27, 0                                 // 000000001A80: D3D9401B 18000080
+	v_accvgpr_write_b32 a26, 0                                 // 000000001A88: D3D9401A 18000080
+	v_accvgpr_write_b32 a25, 0                                 // 000000001A90: D3D94019 18000080
+	v_accvgpr_write_b32 a24, 0                                 // 000000001A98: D3D94018 18000080
+	v_accvgpr_write_b32 a31, 0                                 // 000000001AA0: D3D9401F 18000080
+	v_accvgpr_write_b32 a30, 0                                 // 000000001AA8: D3D9401E 18000080
+	v_accvgpr_write_b32 a29, 0                                 // 000000001AB0: D3D9401D 18000080
+	v_accvgpr_write_b32 a28, 0                                 // 000000001AB8: D3D9401C 18000080
+	v_accvgpr_write_b32 a35, 0                                 // 000000001AC0: D3D94023 18000080
+	v_accvgpr_write_b32 a34, 0                                 // 000000001AC8: D3D94022 18000080
+	v_accvgpr_write_b32 a33, 0                                 // 000000001AD0: D3D94021 18000080
+	v_accvgpr_write_b32 a32, 0                                 // 000000001AD8: D3D94020 18000080
+	v_accvgpr_write_b32 a39, 0                                 // 000000001AE0: D3D94027 18000080
+	v_accvgpr_write_b32 a38, 0                                 // 000000001AE8: D3D94026 18000080
+	v_accvgpr_write_b32 a37, 0                                 // 000000001AF0: D3D94025 18000080
+	v_accvgpr_write_b32 a36, 0                                 // 000000001AF8: D3D94024 18000080
+	v_accvgpr_write_b32 a43, 0                                 // 000000001B00: D3D9402B 18000080
+	v_accvgpr_write_b32 a42, 0                                 // 000000001B08: D3D9402A 18000080
+	v_accvgpr_write_b32 a41, 0                                 // 000000001B10: D3D94029 18000080
+	v_accvgpr_write_b32 a40, 0                                 // 000000001B18: D3D94028 18000080
+	v_mov_b64_e32 v[2:3], s[6:7]                               // 000000001B20: 7E047006
+	s_mov_b32 s33, 0                                           // 000000001B24: BEA10080
+
+L0:
+	s_nop 0                                                    // 000000001B28: BF800000
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001B2C: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:34
+;     for (int i = 0;  32; ++i)
+	s_add_i32 s4, s4, -8                                       // 000000001B34: 8104C804
+	s_cmp_eq_u32 s4, 0                                         // 000000001B38: BF068004
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001B3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001B44: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001B4C: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001B54: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001B5C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001B64: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001B6C: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001B74: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001B7C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001B84: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001B8C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001B94: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001B9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001BA4: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001BAC: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001BB4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001BBC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001BC4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001BCC: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001BD4: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001BDC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001BE4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001BEC: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001BF4: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001BFC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001C04: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001C0C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001C14: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001C1C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001C24: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001C2C: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001C34: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001C3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001C44: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001C4C: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001C54: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001C5C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001C64: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001C6C: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001C74: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001C7C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001C84: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001C8C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001C94: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001C9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001CA4: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001CAC: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001CB4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001CBC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001CC4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001CCC: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001CD4: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001CDC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001CE4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001CEC: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001CF4: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001CFC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001D04: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001D0C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001D14: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001D1C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001D24: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001D2C: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001D34: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001D3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001D44: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001D4C: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001D54: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001D5C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001D64: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001D6C: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001D74: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001D7C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001D84: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001D8C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001D94: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001D9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001DA4: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001DAC: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001DB4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001DBC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001DC4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001DCC: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001DD4: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001DDC: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001DE4: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001DEC: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001DF4: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001DFC: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001E04: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001E0C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001E14: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001E1C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001E24: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001E2C: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001E34: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001E3C: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001E44: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001E4C: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001E54: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001E5C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001E64: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001E6C: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001E74: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001E7C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001E84: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001E8C: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001E94: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001E9C: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001EA4: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001EAC: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:43
+;         acc0  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc0,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[40:43], v[2:3], v[2:3], a[40:43] // 000000001EB4: D3CD8028 04A20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:44
+;         acc1  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc1,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[36:39], v[2:3], v[2:3], a[36:39] // 000000001EBC: D3CD8024 04920502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:45
+;         acc2  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc2,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[32:35], v[2:3], v[2:3], a[32:35] // 000000001EC4: D3CD8020 04820502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:46
+;         acc3  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc3,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[28:31], v[2:3], v[2:3], a[28:31] // 000000001ECC: D3CD801C 04720502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:47
+;         acc4  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc4,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[24:27], v[2:3], v[2:3], a[24:27] // 000000001ED4: D3CD8018 04620502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:50
+;         acc7  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc7,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[44:47], v[2:3], v[2:3], a[44:47] // 000000001EDC: D3CD802C 04B20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:51
+;         acc8  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc8,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[48:51], v[2:3], v[2:3], a[48:51] // 000000001EE4: D3CD8030 04C20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:53
+;         acc10 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc10, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[16:19], v[2:3], v[2:3], a[16:19] // 000000001EEC: D3CD8010 04420502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:54
+;         acc11 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc11, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[12:15], v[2:3], v[2:3], a[12:15] // 000000001EF4: D3CD800C 04320502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:56
+;         acc13 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc13, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[0:3], v[2:3], v[2:3], a[0:3]     // 000000001EFC: D3CD8000 04020502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:57
+;         acc14 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc14, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[4:7], v[2:3], v[2:3], a[4:7]     // 000000001F04: D3CD8004 04120502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:58
+;         acc15 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc15, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[8:11], v[2:3], v[2:3], a[8:11]   // 000000001F0C: D3CD8008 04220502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:55
+;         acc12 = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc12, 0,0,0);
+	v_mfma_f32_16x16x16_f16 a[20:23], v[2:3], v[2:3], a[20:23] // 000000001F14: D3CD8014 04520502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:52
+;         acc9  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc9,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[52:55], v[2:3], v[2:3], a[52:55] // 000000001F1C: D3CD8034 04D20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:49
+;         acc6  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc6,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[56:59], v[2:3], v[2:3], a[56:59] // 000000001F24: D3CD8038 04E20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:48
+;         acc5  = __builtin_amdgcn_mfma_f32_16x16x16f16(a, b, acc5,  0,0,0);
+	v_mfma_f32_16x16x16_f16 a[60:63], v[2:3], v[2:3], a[60:63] // 000000001F2C: D3CD803C 04F20502
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:34
+;     for (int i = 0;  32; ++i)
+	s_cbranch_scc0 L0                                          // 000000001F34: BF84FEFC
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:6
+;     int gid = get_global_id(0);
+	s_load_dwordx4 s[4:7], s[0:1], 0x0                         // 000000001F38: C00A0100 00000000
+	s_waitcnt lgkmcnt(0)                                       // 000000001F40: BF8CC07F
+	s_and_b32 s0, 0xffff, s3                                   // 000000001F44: 860003FF 0000FFFF
+	s_mul_i32 s2, s2, s0                                       // 000000001F4C: 92020002
+	s_add_i32 s0, s8, s2                                       // 000000001F50: 81000208
+	v_add_u32_e32 v3, s0, v0                                   // 000000001F54: 68060000
+	v_mov_b32_e32 v2, 0                                        // 000000001F58: 7E040280
+	v_add_u32_e32 v21, 31, v3                                  // 000000001F5C: 682A069F
+	v_mov_b32_e32 v20, v2                                      // 000000001F60: 7E280302
+	v_ashrrev_i64 v[20:21], 30, v[20:21]                       // 000000001F64: D2910014 0002289E
+	v_lshl_add_u64 v[20:21], s[6:7], 0, v[20:21]               // 000000001F6C: D2080014 04510006
+	global_load_dword v0, v[20:21], off                        // 000000001F74: DC508000 007F0014
+	global_load_dword v19, v[20:21], off offset:256            // 000000001F7C: DC508100 137F0014
+	global_load_dword v22, v[20:21], off offset:512            // 000000001F84: DC508200 167F0014
+	global_load_dword v23, v[20:21], off offset:768            // 000000001F8C: DC508300 177F0014
+	v_accvgpr_read_b32 v13, a40                                // 000000001F94: D3D8400D 18000128
+	v_accvgpr_read_b32 v14, a36                                // 000000001F9C: D3D8400E 18000124
+	v_accvgpr_read_b32 v15, a32                                // 000000001FA4: D3D8400F 18000120
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:69
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v13, v14, v13                                // 000000001FAC: 021A1B0E
+	v_accvgpr_read_b32 v16, a28                                // 000000001FB0: D3D84010 1800011C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:69
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v13, v15, v13                                // 000000001FB8: 021A1B0F
+	v_accvgpr_read_b32 v17, a24                                // 000000001FBC: D3D84011 18000118
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:69
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v13, v16, v13                                // 000000001FC4: 021A1B10
+	v_accvgpr_read_b32 v18, a60                                // 000000001FC8: D3D84012 1800013C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:69
+;         acc0.x  + acc1.x  + acc2.x  + acc3.x  +
+	v_add_f32_e32 v13, v17, v13                                // 000000001FD0: 021A1B11
+	v_accvgpr_read_b32 v12, a56                                // 000000001FD4: D3D8400C 18000138
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:70
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v13, v18, v13                                // 000000001FDC: 021A1B12
+	v_accvgpr_read_b32 v11, a44                                // 000000001FE0: D3D8400B 1800012C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:70
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v12, v12, v13                                // 000000001FE8: 02181B0C
+	v_accvgpr_read_b32 v10, a48                                // 000000001FEC: D3D8400A 18000130
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:70
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v11, v11, v12                                // 000000001FF4: 0216190B
+	v_accvgpr_read_b32 v9, a52                                 // 000000001FF8: D3D84009 18000134
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:70
+;         acc4.x  + acc5.x  + acc6.x  + acc7.x  +
+	v_add_f32_e32 v10, v10, v11                                // 000000002000: 0214170A
+	v_accvgpr_read_b32 v8, a16                                 // 000000002004: D3D84008 18000110
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:71
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v9, v9, v10                                  // 00000000200C: 02121509
+	v_accvgpr_read_b32 v7, a12                                 // 000000002010: D3D84007 1800010C
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:71
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v8, v8, v9                                   // 000000002018: 02101308
+	v_accvgpr_read_b32 v6, a20                                 // 00000000201C: D3D84006 18000114
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:71
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v7, v7, v8                                   // 000000002024: 020E1107
+	v_accvgpr_read_b32 v5, a0                                  // 000000002028: D3D84005 18000100
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:71
+;         acc8.x  + acc9.x  + acc10.x + acc11.x +
+	v_add_f32_e32 v6, v6, v7                                   // 000000002030: 020C0F06
+	v_accvgpr_read_b32 v4, a4                                  // 000000002034: D3D84004 18000104
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:72
+;         acc12.x + acc13.x + acc14.x + acc15.x +
+	v_add_f32_e32 v5, v5, v6                                   // 00000000203C: 020A0D05
+	v_accvgpr_read_b32 v1, a8                                  // 000000002040: D3D84001 18000108
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:72
+;         acc12.x + acc13.x + acc14.x + acc15.x +
+	v_add_f32_e32 v4, v4, v5                                   // 000000002048: 02080B04
+	v_add_f32_e32 v1, v1, v4                                   // 00000000204C: 02020901
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:75
+;     out[gid] = sum;
+	v_ashrrev_i64 v[2:3], 30, v[2:3]                           // 000000002050: D2910002 0002049E
+	s_waitcnt vmcnt(2)                                         // 000000002058: BF8C0F72
+	v_add_f32_e32 v0, v0, v19                                  // 00000000205C: 02002700
+	v_mul_f32_e32 v5, 0.5, v0                                  // 000000002060: 0A0A00F0
+	s_waitcnt vmcnt(0)                                         // 000000002064: BF8C0F70
+	v_add_f32_e32 v4, v22, v23                                 // 000000002068: 02082F16
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:72
+;         acc12.x + acc13.x + acc14.x + acc15.x +
+	v_add_f32_e32 v0, v0, v1                                   // 00000000206C: 02000300
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:73
+;         tmp4 + tmp5 + tmp6 + tmp7;
+	v_add_f32_e32 v0, v4, v0                                   // 000000002070: 02000104
+	v_mul_f32_e32 v6, 0x3e800000, v4                           // 000000002074: 0A0C08FF 3E800000
+	v_add_f32_e32 v0, v5, v0                                   // 00000000207C: 02000105
+	v_add_f32_e32 v4, v6, v0                                   // 000000002080: 02080106
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:75
+;     out[gid] = sum;
+	v_lshl_add_u64 v[0:1], s[4:5], 0, v[2:3]                   // 000000002084: D2080000 04090004
+	global_store_dword v[0:1], v4, off                         // 00000000208C: DC708000 007F0400
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260214-051359\Clone0\high_pressure_persistent.cl:76
+; }
+	s_endpgm                                                   // 000000002094: BF810000
+
