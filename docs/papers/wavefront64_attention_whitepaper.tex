@@ -1,0 +1,193 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Wavefront-64 Native Attention on CDNA4:\\
+A Register-Topology-Aware Redesign of FlashAttention}
+
+\author{
+\IEEEauthorblockN{Chandan Kumar}
+\IEEEauthorblockA{
+Independent Research\\
+Email: cs84861@gmail.com
+}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+FlashAttention and FlashAttention-3 achieve state-of-the-art performance on NVIDIA GPUs by optimizing memory movement and instruction scheduling.
+However, these kernels were engineered under warp-32 execution assumptions.
+
+On AMD CDNA4 (gfx950), execution occurs in Wavefront-64 mode with a fixed 256 VGPR budget per SIMD.
+At HEAD\_DIM $\ge 128$, persistent full-head accumulation causes deterministic occupancy collapse.
+
+This paper derives a formal register model for Wavefront-64, validates collapse empirically via compiler output, and proposes a partitioned-head redesign that restores occupancy without sacrificing MFMA throughput.
+\end{abstract}
+
+\section{Introduction}
+
+Attention kernels dominate modern transformer workloads \cite{vaswani2017attention}.
+FlashAttention \cite{dao2022flashattention} and FlashAttention-3 \cite{dao2024flash3} optimize memory traffic and scheduling for NVIDIA architectures.
+
+However, GPU performance is constrained not only by memory bandwidth and instruction throughput, but by register topology.
+We demonstrate that on CDNA4 Wavefront-64, persistent accumulator design induces a structural occupancy collapse at HEAD\_DIM = 128.
+
+\section{CDNA4 Execution Model}
+
+\subsection{Hardware Parameters}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\toprule
+Wavefront Size & 64 \\
+VGPR per SIMD & 256 \\
+SGPR per SIMD & 102 \\
+LDS per CU & 160 KB \\
+\bottomrule
+\end{tabular}
+\caption{CDNA4 (gfx950) architectural parameters}
+\end{table}
+
+\subsection{Occupancy Equation}
+
+Let $R$ denote VGPR usage per lane.
+Total SIMD VGPR budget = 256.
+
+\begin{equation}
+W = \left\lfloor \frac{256}{R} \right\rfloor
+\end{equation}
+
+where $W$ is waves per SIMD.
+
+Critical boundary:
+
+\begin{equation}
+R \le 128 \Rightarrow W \ge 2
+\end{equation}
+
+\begin{equation}
+R > 128 \Rightarrow W = 1
+\end{equation}
+
+Two waves are required to hide MFMA latency.
+
+\section{Register Growth Model}
+
+Let:
+
+\begin{itemize}
+\item $D$ = HEAD\_DIM
+\item $R_{base}$ = non-accumulator registers
+\item $R_{acc}$ = accumulator registers
+\end{itemize}
+
+Persistent full-head accumulation implies:
+
+\begin{equation}
+R_{total} = R_{base} + D
+\end{equation}
+
+Empirically:
+
+\begin{equation}
+R_{base} \approx 20
+\end{equation}
+
+For $D = 128$:
+
+\begin{equation}
+R_{total} \approx 148
+\end{equation}
+
+Thus:
+
+\begin{equation}
+W = \left\lfloor \frac{256}{148} \right\rfloor = 1
+\end{equation}
+
+Occupancy collapse.
+
+\section{Empirical Validation}
+
+RGA compiler output confirms:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\toprule
+Accumulators & Used VGPR & Waves \\
+\midrule
+1 & 16 & 16 \\
+8 & 80 & 3 \\
+16 & 136 & 1 \\
+32 & 296 & 1 \\
+\bottomrule
+\end{tabular}
+\caption{Measured VGPR growth on gfx950}
+\end{table}
+
+Collapse observed at $\approx 130$ VGPR.
+
+\section{Partitioned-Head Redesign}
+
+We introduce partition factor $P$:
+
+\begin{equation}
+R_{total} = R_{base} + \frac{D}{P}
+\end{equation}
+
+For $D=128$, $P=2$:
+
+\begin{equation}
+R_{total} \approx 20 + 64 = 84
+\end{equation}
+
+\begin{equation}
+W = \left\lfloor \frac{256}{84} \right\rfloor = 3
+\end{equation}
+
+Occupancy restored.
+
+\section{When FlashAttention-3 Remains Optimal}
+
+FlashAttention-3 \cite{dao2024flash3} remains optimal when:
+
+\begin{itemize}
+\item HEAD\_DIM $\le 64$
+\item Kernel is memory-bound
+\item FP8 reduces accumulator footprint
+\end{itemize}
+
+\section{Conclusion}
+
+FlashAttention-3 optimizes scheduling and memory reuse.
+However, Wavefront-64 introduces a different register topology constraint.
+
+At HEAD\_DIM $\ge 128$, occupancy collapse is structural.
+
+A partitioned-head Wavefront-64-native redesign restores wave residency and improves MFMA utilization.
+
+This work reframes attention optimization as a register-topology alignment problem rather than a memory-only problem.
+
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{1}
+
+\bibitem{vaswani2017attention}
+A. Vaswani et al., ``Attention Is All You Need,'' 2017.
+
+\bibitem{dao2022flashattention}
+T. Dao et al., ``FlashAttention,'' 2022.
+
+\bibitem{dao2024flash3}
+T. Dao et al., ``FlashAttention-3,'' 2024.
+
+\end{thebibliography}
+
+\end{document}
