@@ -69,3 +69,19 @@ Persistent MFMA-heavy kernels scale linearly in VGPR cost
 once compiler reuse breaks.
 
 This experimentally demonstrates the occupancy collapse boundary.
+
+### Occupancy Collapse Curve (VGPR Sweep)
+
+HEAD_DIM | USED_VGPR | Waves/SIMD
+----------------------------------
+  32     |    80     | 3
+  64     |   136     | 1–2
+ 128     |   296     | 1  ← Collapse
+
+Occupancy vs VGPR
+
+Waves
+4 | ████
+3 | ███
+2 | ██
+1 | █  ← FlashAttention-128

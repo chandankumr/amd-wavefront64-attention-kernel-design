@@ -278,3 +278,25 @@ This reframes attention kernel design as:
 not merely a tiling problem.
 
 ---
+
+### FlashAttention-3 (Warp-32 Model)
+
+Warp 0 → Row 0
+Warp 1 → Row 1
+Each lane owns full HEAD_DIM
+
+HEAD_DIM=128
+→ 128 accumulators per thread
+
+---------------------------------------
+
+### Wavefront-64 Native Model
+
+Wavefront-64:
+Lane 0  → Row 0, Head 0–31
+Lane 1  → Row 0, Head 32–63
+Lane 2  → Row 0, Head 64–95
+Lane 3  → Row 0, Head 96–127
+
+Each lane holds 32 accumulators
+Cross-lane reduction required
