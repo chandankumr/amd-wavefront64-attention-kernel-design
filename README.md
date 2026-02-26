@@ -1,101 +1,211 @@
-# Wavefront-64 Native Attention Kernel Design (AMD)
-
-This repository is a **hardware-first analysis and design study** of attention kernels
-on **AMD wavefront-64 GPUs (CDNA / MI-series)**.
-
-It is written from the perspective of **GPU architecture constraints**, not framework
-or algorithm preferences.
-
-The goal is to answer one question:
-
-> How should attention kernels be designed when wavefront-64 execution,
-> split register files, and MFMA-based matrix compute are treated as first-class realities?
+# FlashAttention vs Wavefront-64  
+## A Quantitative Register-Level Analysis on AMD CDNA4 (gfx950)
 
 ---
 
-## Why This Repository Exists
+## 1. Executive Summary
 
-Most modern attention kernels (e.g., FlashAttention) are designed around assumptions that hold well on:
+FlashAttention is highly optimized for NVIDIA Warp-32 architectures.
+
+This repository demonstrates, using compiler-level analysis and register accounting, that:
+
+> FlashAttention-style persistent accumulator designs encounter structural occupancy collapse on AMD Wavefront-64 architectures at HEAD_DIM ≥ 128.
+
+The issue is not algorithmic.  
+It is architectural.
+
+Using Radeon GPU Analyzer (RGA) output, we show:
+
+- VGPR usage scaling with accumulator count
+- Allocation granularity effects
+- Wave occupancy collapse at 256 VGPR per SIMD
+- A wavefront-64 native alternative design
+
+---
+
+## 2. Key Finding
+
+On CDNA4 (gfx950):
+
+Total VGPR per SIMD = 256
+Waves per SIMD = floor(256 / VGPR_per_wave)
+
+
+From actual RGA measurements:
+
+| HEAD_DIM | USED_VGPR | Waves/SIMD |
+|-----------|-----------|------------|
+| 32        | 80        | 3          |
+| 64        | 136       | 1–2        |
+| 128       | 296       | 1 ← Collapse |
+
+When VGPR usage exceeds 256:
+
+→ Only one wave can reside on a SIMD  
+→ Latency hiding collapses  
+→ MFMA utilization drops  
+
+This is a hard hardware constraint.
+
+---
+
+## 3. Why This Matters
+
+FlashAttention assumes:
+
 - Warp-32 execution
-- Unified register files
-- Gradual occupancy degradation
+- Per-thread register scaling
+- Large register file per SM
 
-AMD GPUs differ fundamentally:
+CDNA assumes:
+
 - Wavefront-64 execution
-- Physically split register files (ArchVGPR / AccVGPR)
-- Sharp occupancy cliffs
-- Explicit MFMA ↔ ALU domain crossings
+- Per-wave register allocation
+- 256 VGPR per SIMD limit
+- 8-VGPR allocation granularity
 
-This repository documents **where those assumptions break**, **when they still hold**, and
-**how a wavefront-64-native design can be constructed instead**.
+Doubling warp width from 32 → 64 amplifies persistent accumulator pressure.
 
-This is not a benchmark repo.
-This is not a framework comparison.
-This is an **architectural design study**.
+This creates an architectural mismatch.
 
 ---
 
-## Structure of the Analysis
+## 4. Repository Structure
 
-The repository is organized as a sequence of design reasoning steps.
+### 📄 Core Analysis
 
-### 1. Hardware Reality (ISA-Level)
-- `isa_level_attention_mapping.md`  
-  Physical constraints imposed by MFMA, AccVGPRs, and wavefront-64 execution.
+- `docs/cdna4_wavefront64_register_model.md`
+- `docs/flashattention3_under_cdna4_register_model.md`
+- `docs/wavefront64_native_attention_tile.md`
+- `docs/wavefront64_native_vs_flashattention3_summary.md`
+- `docs/why_flashattention_collapses_at_128_head_dim_on_wave64.md`
 
-### 2. Architectural Contracts
-- `attention_kernel_contract_for_wavefront64.md`  
-  Non-negotiable execution constraints any high-performance kernel must respect.
+### 📊 Compiler-Verified Experiments
 
-### 3. Failure Analysis
-- `where_flashattention_violates_wavefront64_contract.md`  
-  Where and why FlashAttention breaks those contracts on AMD GPUs.
+- `experiments/rga/mfma_occupancy_sweep/`
+- `experiments/rga/mfma_vgpr_scaling/`
+- `experiments/rga/mfma_spill_boundary/`
 
-### 4. Judgment, Not Dogma
-- `when_flashattention_is_still_effective_on_wavefront64.md`  
-  Specific regimes where FlashAttention remains valid and competitive.
+Each experiment includes:
 
-### 5. Engineering Priorities
-- `which_flashattention_violations_are_worth_fixing.md`  
-  Which issues justify fixes, and which should be accepted or worked around.
-
-### 6. Native Design Proposal
-- `designing_wavefront64_native_attention.md`  
-  A ground-up attention kernel architecture designed specifically for wavefront-64 GPUs.
+- ISA disassembly
+- Live register reports
+- Resource usage CSV
+- Screenshots of RGA output
 
 ---
 
-## What This Repository Is (and Is Not)
+## 5. What This Work Is
 
-**This repository is:**
-- Architecture-driven
-- Constraint-aware
-- Focused on correctness, predictability, and performance tradeoffs
+This is:
 
-**This repository is not:**
-- A claim that FlashAttention is “bad”
-- A CUDA vs ROCm benchmark comparison
-- An implementation drop-in replacement
+- Architecture-level kernel analysis
+- Register pressure modeling
+- Occupancy constraint quantification
+- Hardware-aware attention redesign
+
+This is not:
+
+- A runtime benchmark suite
+- A FlashAttention reimplementation
+- A performance marketing comparison
+
+All claims are grounded in compiler-generated VGPR allocation data.
+
+See:
+
+`docs/limitations_and_validation_scope.md`
 
 ---
 
-## Intended Audience
+## 6. Proposed Solution
 
-This work is intended for:
-- GPU kernel engineers
-- Compiler engineers
-- AI runtime / systems engineers
-- Architecture-aware ML practitioners
+Instead of persistent full HEAD_DIM accumulators per lane:
+
+Wavefront-64 Native Design:
+
+- Split HEAD_DIM across lanes
+- Reduce per-lane accumulator count
+- Introduce cross-lane reduction
+- Maintain ≥2 waves per SIMD
+
+This restores:
+
+- Occupancy
+- Latency hiding
+- MFMA pipeline efficiency
+
+Details:
+
+`docs/wavefront64_native_attention_tile.md`
 
 ---
 
-## Status
+## 7. NVIDIA vs AMD Comparison
 
-This repository represents a **completed design investigation**.
+See:
 
-Future work could include:
-- Prototype kernels
-- Cost-model-driven kernel selection
-- Integration into runtime heuristics
+`docs/nvidia_vs_wave64_register_model.md`
 
-Those are intentionally left out to keep the focus on **architecture and design clarity**.
+Summary:
+
+| Feature | NVIDIA Warp-32 | AMD Wavefront-64 |
+|----------|----------------|------------------|
+| Execution width | 32 | 64 |
+| Register allocation | Per thread | Per wave |
+| Register limit | Large per SM | 256 per SIMD |
+| Scaling behavior | Gradual | Hard collapse |
+
+---
+
+## 8. Research Positioning
+
+This repository establishes:
+
+- A register-level explanation for attention scaling limits on CDNA
+- A wave-native tiling strategy
+- A formal occupancy collapse threshold
+
+It provides a foundation for:
+
+- ROCm kernel redesign
+- Triton backend tuning
+- Vendor-aware attention optimization
+
+---
+
+## 9. Author Context
+
+This project is part of an independent architectural study of:
+
+Wavefront-64-native attention kernel design for AMD CDNA architectures.
+
+All experiments were conducted using:
+
+- Radeon GPU Analyzer (gfx950 target)
+- ISA disassembly
+- Compiler live register reports
+
+---
+
+## 10. Suggested Reading Order
+
+1. `cdna4_wavefront64_register_model.md`
+2. `flashattention3_under_cdna4_register_model.md`
+3. `cdna4_occupancy_collapse_analysis.md`
+4. `wavefront64_native_attention_tile.md`
+5. `limitations_and_validation_scope.md`
+
+---
+
+## Closing Statement
+
+This work argues that:
+
+> Efficient attention kernels must be architecture-native.
+
+FlashAttention is warp-native.  
+CDNA requires wave-native.
+
+Understanding that difference is the key to performance portability.
+
