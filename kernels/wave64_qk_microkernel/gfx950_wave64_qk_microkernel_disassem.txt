@@ -1,0 +1,230 @@
+AMD Kernel Code for "wave64_qk_microkernel"
+
+Disassembly for "wave64_qk_microkernel":
+
+@kernel wave64_qk_microkernel:
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:35
+;     const int lane = get_local_id(0);     // 0..63
+	s_load_dword s3, s[0:1], 0x18                              // 000000001700: C00200C0 00000018
+	s_mov_b32 s33, 0                                           // 000000001708: BEA10080
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	s_waitcnt lgkmcnt(0)                                       // 00000000170C: BF8CC07F
+	s_cmp_lt_i32 s3, 1                                         // 000000001710: BF048103
+	s_cbranch_scc1 L1                                          // 000000001714: BF850090
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:35
+;     const int lane = get_local_id(0);     // 0..63
+	s_load_dwordx4 s[8:11], s[0:1], 0x0                        // 000000001718: C00A0200 00000000
+	s_load_dwordx2 s[4:5], s[0:1], 0x10                        // 000000001720: C0060100 00000010
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:47
+;     const int q_base = row * 64;
+	s_lshl_b32 s0, s2, 6                                       // 000000001728: 8E008602
+	s_ashr_i32 s1, s0, 31                                      // 00000000172C: 90019F00
+	s_lshl_b64 s[0:1], s[0:1], 1                               // 000000001730: 8E808100
+	s_waitcnt lgkmcnt(0)                                       // 000000001734: BF8CC07F
+	s_add_u32 s0, s0, s8                                       // 000000001738: 80000800
+	s_addc_u32 s1, s1, s9                                      // 00000000173C: 82010901
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	v_lshlrev_b32_e32 v6, 1, v0                                // 000000001740: 240C0081
+	v_mov_b32_e32 v7, 0                                        // 000000001744: 7E0E0280
+	v_lshl_add_u64 v[2:3], s[0:1], 0, v[6:7]                   // 000000001748: D2080002 04190000
+	s_mul_i32 s0, s3, s2                                       // 000000001750: 92000203
+	v_add_u32_e32 v4, s0, v0                                   // 000000001754: 68080000
+	v_lshl_add_u64 v[0:1], v[6:7], 0, s[10:11]                 // 000000001758: D2080000 00290106
+	s_mov_b64 s[0:1], 0x660                                    // 000000001760: BE8001FF 00000660
+	v_lshl_add_u64 v[0:1], v[0:1], 0, s[0:1]                   // 000000001768: D2080000 00010100
+	s_mov_b32 s2, 0                                            // 000000001770: BE820080
+	s_mov_b64 s[0:1], 0x800                                    // 000000001774: BE8001FF 00000800
+
+L0:
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:79
+;             half4 q_frag = vload4(0, Q + q_base + d + lane);
+	global_load_dwordx2 v[6:7], v[2:3], off                    // 00000000177C: DC548000 067F0002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:86
+;             half4 k0 = vload4(0,
+	global_load_dwordx2 v[8:9], v[0:1], off offset:-1632       // 000000001784: DC5499A0 087F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:90
+;             half4 k1 = vload4(0,
+	global_load_dwordx2 v[10:11], v[0:1], off offset:-1120     // 00000000178C: DC549BA0 0A7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:94
+;             half4 k2 = vload4(0,
+	global_load_dwordx2 v[12:13], v[0:1], off offset:-608      // 000000001794: DC549DA0 0C7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:98
+;             half4 k3 = vload4(0,
+	global_load_dwordx2 v[14:15], v[0:1], off offset:-96       // 00000000179C: DC549FA0 0E7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:79
+;             half4 q_frag = vload4(0, Q + q_base + d + lane);
+	global_load_dwordx2 v[16:17], v[2:3], off offset:32        // 0000000017A4: DC548020 107F0002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:86
+;             half4 k0 = vload4(0,
+	global_load_dwordx2 v[18:19], v[0:1], off offset:-1600     // 0000000017AC: DC5499C0 127F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:90
+;             half4 k1 = vload4(0,
+	global_load_dwordx2 v[20:21], v[0:1], off offset:-1088     // 0000000017B4: DC549BC0 147F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:94
+;             half4 k2 = vload4(0,
+	global_load_dwordx2 v[22:23], v[0:1], off offset:-576      // 0000000017BC: DC549DC0 167F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:98
+;             half4 k3 = vload4(0,
+	global_load_dwordx2 v[24:25], v[0:1], off offset:-64       // 0000000017C4: DC549FC0 187F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:79
+;             half4 q_frag = vload4(0, Q + q_base + d + lane);
+	global_load_dwordx2 v[26:27], v[2:3], off offset:64        // 0000000017CC: DC548040 1A7F0002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:86
+;             half4 k0 = vload4(0,
+	global_load_dwordx2 v[28:29], v[0:1], off offset:-1568     // 0000000017D4: DC5499E0 1C7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:90
+;             half4 k1 = vload4(0,
+	global_load_dwordx2 v[30:31], v[0:1], off offset:-1056     // 0000000017DC: DC549BE0 1E7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:94
+;             half4 k2 = vload4(0,
+	global_load_dwordx2 v[32:33], v[0:1], off offset:-544      // 0000000017E4: DC549DE0 207F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:98
+;             half4 k3 = vload4(0,
+	global_load_dwordx2 v[34:35], v[0:1], off offset:-32       // 0000000017EC: DC549FE0 227F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:79
+;             half4 q_frag = vload4(0, Q + q_base + d + lane);
+	global_load_dwordx2 v[36:37], v[2:3], off offset:96        // 0000000017F4: DC548060 247F0002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:86
+;             half4 k0 = vload4(0,
+	global_load_dwordx2 v[38:39], v[0:1], off offset:-1536     // 0000000017FC: DC549A00 267F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:105
+;             acc0 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(15)                                        // 000000001804: BF8C0F7F
+	v_mfma_f32_16x16x16_f16 a[0:3], v[6:7], v[8:9], 0          // 000000001808: D3CD8000 02021106
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:90
+;             half4 k1 = vload4(0,
+	global_load_dwordx2 v[8:9], v[0:1], off offset:-1024       // 000000001810: DC549C00 087F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:108
+;             acc1 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(15)                                        // 000000001818: BF8C0F7F
+	v_mfma_f32_16x16x16_f16 a[4:7], v[6:7], v[10:11], 0        // 00000000181C: D3CD8004 02021506
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:94
+;             half4 k2 = vload4(0,
+	global_load_dwordx2 v[10:11], v[0:1], off offset:-512      // 000000001824: DC549E00 0A7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:111
+;             acc2 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(15)                                        // 00000000182C: BF8C0F7F
+	v_mfma_f32_16x16x16_f16 a[8:11], v[6:7], v[12:13], 0       // 000000001830: D3CD8008 02021906
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:98
+;             half4 k3 = vload4(0,
+	global_load_dwordx2 v[12:13], v[0:1], off                  // 000000001838: DC548000 0C7F0000
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	v_lshl_add_u64 v[0:1], v[0:1], 0, s[0:1]                   // 000000001840: D2080000 00010100
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:114
+;             acc3 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(15)                                        // 000000001848: BF8C0F7F
+	v_mfma_f32_16x16x16_f16 a[12:15], v[6:7], v[14:15], 0      // 00000000184C: D3CD800C 02021D06
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:124
+;         Out[out_base + 0  + lane] = acc0.x;
+	v_add_u32_e32 v6, s2, v4                                   // 000000001854: 680C0802
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	s_add_i32 s2, s2, 16                                       // 000000001858: 81029002
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:124
+;         Out[out_base + 0  + lane] = acc0.x;
+	v_ashrrev_i32_e32 v7, 31, v6                               // 00000000185C: 220E0C9F
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:125
+;         Out[out_base + 4  + lane] = acc1.x;
+	v_add_u32_e32 v14, 4, v6                                   // 000000001860: 681C0C84
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	s_cmp_lt_i32 s2, s3                                        // 000000001864: BF040302
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:125
+;         Out[out_base + 4  + lane] = acc1.x;
+	v_ashrrev_i32_e32 v15, 31, v14                             // 000000001868: 221E1C9F
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:105
+;             acc0 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(13)                                        // 00000000186C: BF8C0F7D
+	v_mfma_f32_16x16x16_f16 a[0:3], v[16:17], v[18:19], a[0:3] // 000000001870: D3CD8000 04022510
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:127
+;         Out[out_base + 12 + lane] = acc3.x;
+	v_add_u32_e32 v18, 12, v6                                  // 000000001878: 68240C8C
+	v_ashrrev_i32_e32 v19, 31, v18                             // 00000000187C: 2226249F
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:108
+;             acc1 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(12)                                        // 000000001880: BF8C0F7C
+	v_mfma_f32_16x16x16_f16 a[4:7], v[16:17], v[20:21], a[4:7] // 000000001884: D3CD8004 04122910
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:111
+;             acc2 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(11)                                        // 00000000188C: BF8C0F7B
+	v_mfma_f32_16x16x16_f16 a[8:11], v[16:17], v[22:23], a[8:11]// 000000001890: D3CD8008 04222D10
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:114
+;             acc3 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(10)                                        // 000000001898: BF8C0F7A
+	v_mfma_f32_16x16x16_f16 a[12:15], v[16:17], v[24:25], a[12:15]// 00000000189C: D3CD800C 04323110
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:126
+;         Out[out_base + 8  + lane] = acc2.x;
+	v_add_u32_e32 v16, 8, v6                                   // 0000000018A4: 68200C88
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:124
+;         Out[out_base + 0  + lane] = acc0.x;
+	v_lshl_add_u64 v[6:7], v[6:7], 2, s[4:5]                   // 0000000018A8: D2080006 00110506
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:126
+;         Out[out_base + 8  + lane] = acc2.x;
+	v_ashrrev_i32_e32 v17, 31, v16                             // 0000000018B0: 2222209F
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:105
+;             acc0 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(8)                                         // 0000000018B4: BF8C0F78
+	v_mfma_f32_16x16x16_f16 a[0:3], v[26:27], v[28:29], a[0:3] // 0000000018B8: D3CD8000 0402391A
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:108
+;             acc1 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(7)                                         // 0000000018C0: BF8C0F77
+	v_mfma_f32_16x16x16_f16 a[4:7], v[26:27], v[30:31], a[4:7] // 0000000018C4: D3CD8004 04123D1A
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:111
+;             acc2 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(6)                                         // 0000000018CC: BF8C0F76
+	v_mfma_f32_16x16x16_f16 a[8:11], v[26:27], v[32:33], a[8:11]// 0000000018D0: D3CD8008 0422411A
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:114
+;             acc3 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(5)                                         // 0000000018D8: BF8C0F75
+	v_mfma_f32_16x16x16_f16 a[12:15], v[26:27], v[34:35], a[12:15]// 0000000018DC: D3CD800C 0432451A
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:105
+;             acc0 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(3)                                         // 0000000018E4: BF8C0F73
+	v_mfma_f32_16x16x16_f16 a[0:3], v[36:37], v[38:39], a[0:3] // 0000000018E8: D3CD8000 04024D24
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:108
+;             acc1 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(2)                                         // 0000000018F0: BF8C0F72
+	v_mfma_f32_16x16x16_f16 a[2:5], v[36:37], v[8:9], a[4:7]   // 0000000018F4: D3CD8002 04121124
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:125
+;         Out[out_base + 4  + lane] = acc1.x;
+	v_lshl_add_u64 v[8:9], v[14:15], 2, s[4:5]                 // 0000000018FC: D2080008 0011050E
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:127
+;         Out[out_base + 12 + lane] = acc3.x;
+	v_lshl_add_u64 v[14:15], v[18:19], 2, s[4:5]               // 000000001904: D208000E 00110512
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:111
+;             acc2 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(1)                                         // 00000000190C: BF8C0F71
+	v_mfma_f32_16x16x16_f16 a[4:7], v[36:37], v[10:11], a[8:11]// 000000001910: D3CD8004 04221524
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:126
+;         Out[out_base + 8  + lane] = acc2.x;
+	v_lshl_add_u64 v[10:11], v[16:17], 2, s[4:5]               // 000000001918: D208000A 00110510
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:114
+;             acc3 = __builtin_amdgcn_mfma_f32_16x16x16f16(
+	s_waitcnt vmcnt(0)                                         // 000000001920: BF8C0F70
+	v_mfma_f32_16x16x16_f16 a[6:9], v[36:37], v[12:13], a[12:15]// 000000001924: D3CD8006 04321924
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:124
+;         Out[out_base + 0  + lane] = acc0.x;
+	global_store_dword v[6:7], a0, off                         // 00000000192C: DC708000 00FF0006
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:125
+;         Out[out_base + 4  + lane] = acc1.x;
+	global_store_dword v[8:9], a2, off                         // 000000001934: DC708000 00FF0208
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:126
+;         Out[out_base + 8  + lane] = acc2.x;
+	s_nop 2                                                    // 00000000193C: BF800002
+	global_store_dword v[10:11], a4, off                       // 000000001940: DC708000 00FF040A
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:127
+;         Out[out_base + 12 + lane] = acc3.x;
+	s_nop 1                                                    // 000000001948: BF800001
+	global_store_dword v[14:15], a6, off                       // 00000000194C: DC708000 00FF060E
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:62
+;     for (int col_block = 0; col_ num_cols; col_block += 16)
+	s_cbranch_scc1 L0                                          // 000000001954: BF85FF89
+
+L1:
+; C:\Users\ks854\Documents\RadeonGPUAnalyzer\Projects\260301-050508\Clone0\wave64_qk_microkernel.cl:129
+; }
+	s_endpgm                                                   // 000000001958: BF810000
+
